@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: #f7f7f7;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  margin: 30px auto;
+  width: auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff; /* Add a background color for better visibility */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  letter-spacing: 1px;
+  margin: 0;
+  text-align: center;
+}
+
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #dedede;
+  border-radius: 4px; /* Rounded corners for a smoother look */
+  font-size: 18px; /* Larger font size for better readability */
+  padding: 10px;
+  width: 100%; /* Adjust width to be larger */
+  margin: 2px; /* Add margin between input boxes */
+  text-align: center; /* Center-align text within the input box */
+}
+
+input[type='number'] {
+  width: 60px; /* Slightly larger width for number inputs */
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #24b9eb;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: inline-block; 
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 5px; /* Space between buttons */
+  padding: 10px; /* Remove side padding for fixed width */
+  border-radius: 4px;
+  width: 489px; /* Set a fixed width for all buttons */
+  text-align: center;
+}
+
+
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+.grid-row {
+  display: flex;
+  justify-content: center; /* Center buttons within the row */
+  margin-bottom: 15px; /* Space between rows */
+  width: 100%; /* Ensure the row takes the full width */
+}
+
+
+
+.grid-cell {
+  margin: 0 2px; /* Space between cells */
+}
+
+@media (max-width: 320px) {
+  .container {
+    width: 300px;
   }
-  to {
-    transform: rotate(360deg);
+
+  input[type='text'],
+  input[type='number'] {
+    width: 40px; /* Adjust width for smaller screens */
   }
+}
+.input-field {
+  border: 1px solid #dedede;
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Larger font size for better readability */
+  padding: 10px; /* Padding for spacing */
+  width: calc(100% - 22px); /* Full width minus padding */
+  margin: 5px 0; /* Vertical margin for spacing */
+  transition: border-color 0.3s ease; /* Smooth transition for focus effect */
+}
+
+.input-field:focus {
+  border-color: #24b9eb; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(36, 185, 235, 0.5); /* Subtle shadow for focus */
+}
+
+textarea.input-field {
+  resize: none; /* Disable resizing */
+  height: auto; /* Auto height for better fit */
+  min-height: 50px; /* Minimum height for the textarea */
+}
+
+.switch {
+  display: flex;
+  align-items: left;
+
+}
+
+.switch input {
+  opacity: 0; /* Hide the default checkbox */
+  position: absolute; /* Remove it from the layout */
+}
+
+.slider {
+  position: relative;
+  width: 34px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 34px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px; /* Position the circle */
+  bottom: 2px; /* Position the circle */
+  background-color: white; /* Circle color */
+  border-radius: 50%; /* Circle shape */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+input:checked + .slider {
+  background-color: #24b9eb; /* Background color when checked */
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px); /* Move the circle to the right */
 }
