@@ -46,13 +46,12 @@ The application should now be running at [http://localhost:3000](http://localhos
 
 Once you run the app, you can access different functionalities via the homepage. There are three main sections:
 
-1. **Encryption/Decryption**: Input the text, select the algorithm, key format, and optional IV.
+1. ~~**Encryption/Decryption**: Input the text, select the algorithm, key format, and optional IV.~~ 
 2. **Hashes**: Generate a hash from your input using different hashing algorithms.
 3. **Encoding/Decoding**: Easily convert your data between different formats like Base64, Hex, UTF, and Binary.
 
 ## Screenshots
 
-*Add screenshots of your app here*
 
 For example:
 ![Home Page](./screenshots/homepage.png)
